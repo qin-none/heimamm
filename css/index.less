@@ -1,0 +1,275 @@
+body {
+    min-width: 8.5333333333rem;
+    max-width: 20rem;
+    margin: 0 auto;
+    // height: 100rem;
+    background-color: #f2f4f7;
+
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+}
+
+// 约束当屏幕大于20rem的时候，html字体大小就不在变化了
+@media screen and (min-width:750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+
+.wrap {
+    background-color: #fff;
+    padding-bottom: 1.146666666667rem;
+}
+
+// 头部区域 
+.header {
+    height: 2.133333rem;
+    border-bottom: .026666666667rem solid #EAEAEA;
+    text-align: center;
+    line-height: 2.133333rem;
+    font-size: .933333rem;
+    color: #1c1c1c;
+}
+
+// 导航栏模块
+.nav {
+    display: flex;
+
+    // 显示不开就换行
+    flex-wrap: wrap;
+    margin: 1.2rem 0 1.6rem 0;
+
+    .item {
+        display: flex;
+        width: 33.333333%;
+        // 纵向显示
+        flex-direction: column;
+        // 水平居中
+        align-items: center;
+
+        img {
+            width: 3.706667rem;
+            height: 3.706667rem;
+        }
+
+        span {
+            font-size: .666667rem;
+            margin-top: .213333rem;
+        }
+
+        // 选择前面三个 -n+3 选择前3个
+        &:nth-child(-n+3) {
+            margin-bottom: 1.65333333rem;
+        }
+    }
+}
+
+// go模块制作
+.go {
+    margin: 0 .37333333rem;
+
+    img {
+        width: 19.253333333333rem;
+    }
+}
+
+
+// 就业指导模块
+.content {
+    padding: 1.066666666667rem .64rem;
+    margin-top: .533333333333rem;
+    background-color: #fff;
+
+    .con-hd {
+        display: flex;
+        // 内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐
+        justify-content: space-between;
+        height: 1.013333333333rem;
+        line-height: 1.013333333333rem;
+
+        h4 {
+            margin: 0;
+            font-size: .746666666667rem;
+            color: #333;
+
+            .icon {
+                display: inline-block;
+                width: 1.013333333333rem;
+                height: 1.013333333333rem;
+                vertical-align: middle;
+
+            }
+        }
+
+        .more {
+            font-size: .586666666667rem;
+            color: #999;
+        }
+
+    }
+}
+
+.get_job_focus {
+    position: relative;
+    margin-top: .906666666667rem;
+
+    .swiper-container {
+        // width: 100%;
+        // 宽度按需定制
+        width: 14.4rem;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: .666666666667rem;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        // 竖向显示
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        transform: scale(0.8);
+        opacity: 0.6;
+
+        a {
+            width: 9.013333333333rem;
+            height: 10.026666666667rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            // 隐藏文字
+            visibility: hidden;
+            width: 9.013333333333rem;
+            font-size: .666666666667rem;
+            margin-top: .64rem;
+            color: #333;
+
+        }
+    }
+
+    // 当前选中的slide 中间的图片
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+        transform: scale(1);
+        z-index: 99;
+        opacity: 1;
+
+        p {
+            // 当前选中的slide 中间的图片显示提示文本
+            visibility: visible;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: black;
+    }
+
+}
+
+
+// 学习模块轮播图
+.study {
+    padding-bottom: 1.6rem;
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-wrapper {
+        // overflow: hidden;
+        padding: 1.04rem .826666666667rem;
+    }
+
+    .swiper-slide {
+        // overflow: hidden;
+        width: 7.7rem;
+        height: 9.066666666667rem;
+        // text-align: center;
+        font-size: 18px;
+        background: #fff;
+        border-radius: .266666666667rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+        h5 {
+            font-size: .853333333333rem;
+            margin: .533333333333rem 0;
+            font-weight: 400;
+            padding: 0 .586666666667rem;
+        }
+
+        img {
+            width: 100%;
+            height: 4.56rem;
+        }
+
+        p {
+            font-size: .693333333333rem;
+            color: #ff4400;
+            padding: 0 .586666666667rem;
+        }
+    }
+}
+
+
+// 底部模块
+.footer {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.933333333333rem;
+    background-color: #fff;
+    z-index: 100;
+    margin-top: .746666666667rem 0;
+    border-top: 3px solid #e2e2e2;
+
+    .item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: .506666666667rem;
+
+
+        img {
+            width: 1.04rem;
+            height: 1.093333333333rem;
+        }
+
+        p {
+            margin-top: .293333333333rem;
+            font-size: .586666666667rem;
+        }
+    }
+
+    .item:first-child {
+        color: #2ccac7;
+    }
+
+
+}
